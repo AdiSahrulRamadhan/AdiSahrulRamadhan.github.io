@@ -178,7 +178,7 @@ def predict():
         else:
             return jsonify({'error': 'Invalid model choice'}), 400
         
-        logging.debug(f"Prediction: {prediction}")
+        logging.debug(f"Prediction : {prediction}")
         
         return jsonify({
             'prediction': label_encoder.inverse_transform(prediction)[0]

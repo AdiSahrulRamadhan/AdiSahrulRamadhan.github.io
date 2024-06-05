@@ -287,12 +287,16 @@
             <select id="model" name="model" required>
             <option value="k3">KNN (k=3)</option>
             <option value="k5">KNN (k=5)</option>
+            <option value="meta">Meta Classifier Gabungan Model</option>
             </select>
             <button type="submit">Predict</button>
             </form>
             <p id="predict-result"></p>
             </div>
-            <script>
+            <script>    // Check if the current path is '/upload' and redirect to the main page if true
+               if (performance.navigation.type === performance.navigation.TYPE_RELOAD && window.location.pathname === '/upload') {
+                    window.location.href = '/';
+                }
                 // Ambil elemen gambar
                 var areaImage = document.getElementById('areaImage');
                 var majorAxisImage = document.getElementById('majorAxisImage');
